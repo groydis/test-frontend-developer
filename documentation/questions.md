@@ -1,9 +1,5 @@
 # Technical Questions
 
-## How will you ensure that user data is secure?
-
-Answer: 
-
 ## How can you guarantee 100% uptime for your application?
 
 Answer: 
@@ -25,6 +21,10 @@ Answer:
 Answer: 
 
 ## How will you deploy your solution?
+
+Answer: 
+
+## How will you ensure that user data is secure?
 
 Answer: 
 
