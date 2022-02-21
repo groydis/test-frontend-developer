@@ -18,7 +18,7 @@ The coding challenge requries the following:
 
 Using React, create a To-Do application to manage a user's daily To-Do items. The application will allow the user to manage the todo items including create, update and delete.
 
-Additionally, there are questions in the `/documentation` folder to support your solution.
+Additionally, there are questions in the [/documentation](./documentation/) folder to support your solution.
 
 ## Requirements
 
