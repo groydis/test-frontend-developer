@@ -11,8 +11,6 @@ The coding challenge requries the following:
 
 1. Fork the `frontend-developer-test` repository to your personal GitHub account.
 1. Clone the `frontend-developer-test` repository from your personal GitHub account onto your development machine.
-1. Open a Terminal window and `cd` into the root directory of the `frontend-developer-test` repository
-1. Run `npm install` in the terminal
 
 ## The Challenge
 
