@@ -12,7 +12,7 @@ Answer:
 
 Answer: 
 
-## How can this taks be split apart to be done as efficiently as possible by a team of developers?
+## How can this task be split apart to be done as efficiently as possible by a team of developers?
 
 Answer: 
 
