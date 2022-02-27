@@ -25,3 +25,7 @@ export const ToggleCompleteTaskStatus = (id: string, tasks: Task[]): Task[] => {
 
   return updatedTasks
 }
+
+// Checks all Taks are complete: Returns True | False
+// eslint-disable-next-line max-len
+export const AllTasksCompleted = (tasks: Task[]): boolean => tasks.length > 0 && !tasks.some((task) => task.isComplete === false)
