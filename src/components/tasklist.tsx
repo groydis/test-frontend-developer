@@ -1,5 +1,7 @@
 import TaskItem from './taskitem'
 import UseTasks from '../state/hooks/usetask'
+import ClearTasksModal from './modals/cleartasks'
+import ErrorModal from './modals/error'
 
 function TaskList() {
   const { tasks } = UseTasks()
@@ -13,6 +15,8 @@ function TaskList() {
           ))
           : <div className="center-text"> You have no tasks to complete! </div>
       }
+      <ClearTasksModal />
+      <ErrorModal />
     </div>
   )
 }

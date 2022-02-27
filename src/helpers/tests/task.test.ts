@@ -3,6 +3,7 @@ import {
   CreateTask,
   DeleteTask,
   ToggleCompleteTaskStatus,
+  AllTasksCompleted,
 } from '../task'
 
 describe('CreateTask', () => {
@@ -15,7 +16,7 @@ describe('CreateTask', () => {
     expect(task).toHaveProperty('isComplete')
     expect(task.isComplete).toBe(false)
   })
-  test('create a tasks with unique ids', () => {
+  test('creates tasks with unique ids', () => {
     const tasks: Task[] = []
 
     for (let x = 0; x < 10; x += 1) {
@@ -75,5 +76,35 @@ describe('ToggleCompleteTaskStatus', () => {
     const result = ToggleCompleteTaskStatus('hij-789', tasks)
     expect(result[0].isComplete).toBe(true)
     expect(result[1].isComplete).toBe(true)
+  })
+})
+
+describe('AllTasksCompleted', () => {
+  test('should return true', () => {
+    const tasks: Task[] = [{
+      id: 'abc-123',
+      isComplete: true,
+      description: 'This is a test, please ignore!',
+    }, {
+      id: 'efg-456',
+      isComplete: true,
+      description: 'This is another test, please ignore!',
+    }]
+    const result = AllTasksCompleted(tasks)
+    expect(result).toBe(true)
+  })
+
+  test('should return false', () => {
+    const tasks: Task[] = [{
+      id: 'abc-123',
+      isComplete: true,
+      description: 'This is a test, please ignore!',
+    }, {
+      id: 'efg-456',
+      isComplete: false,
+      description: 'This is another test, please ignore!',
+    }]
+    const result = AllTasksCompleted(tasks)
+    expect(result).toBe(false)
   })
 })

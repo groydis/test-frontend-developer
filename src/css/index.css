@@ -16,7 +16,7 @@ h1 {
 .page-wrapper {
   display: flex;
   flex-direction: column;
-  
+
   justify-content: center;
   align-items: center; 
   height: 100vh;
@@ -97,4 +97,32 @@ input {
   padding: 5px;
   background-color: white;
   color: black;
+}
+
+.modal-wrapper {
+  margin: 1px;
+  padding: 5px;
+  border: 2px solid black;
+  box-shadow: 1px 2px 2px gray;
+
+  position: fixed;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+}
+
+.modal-wrapper button {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  color: black;
+}
+
+.modal-wrapper div {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
 }

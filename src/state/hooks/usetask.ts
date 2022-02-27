@@ -4,6 +4,7 @@ import {
   CreateTask,
   DeleteTask,
   ToggleCompleteTaskStatus,
+  AllTasksCompleted,
 } from '../../helpers/task'
 import { TaskContext } from '../context/taskcontext'
 
@@ -14,6 +15,7 @@ type TaskHook = {
   deleteTask: (id: string) => void
   clearTasks: () => void
   error: boolean
+  allTasksCompleted: boolean
 }
 
 function UseTasks(): TaskHook {
@@ -27,6 +29,8 @@ function UseTasks(): TaskHook {
 
   const clearTasks = () => setTasks([])
 
+  const allTasksCompleted = AllTasksCompleted(tasks)
+
   return {
     tasks,
     createTask,
@@ -34,6 +38,7 @@ function UseTasks(): TaskHook {
     deleteTask,
     clearTasks,
     error,
+    allTasksCompleted,
   }
 }
 
