@@ -1,5 +1,6 @@
 import { ChangeEvent, useRef } from 'react'
 import UseTasks from '../state/hooks/usetask'
+import ActionButton from './inputs/actionbutton'
 
 function TaskInput() {
   const { createTask } = UseTasks()
@@ -23,14 +24,7 @@ function TaskInput() {
         ref={inputReference}
         type="text"
       />
-      <button
-        id="action-btn"
-        onClick={() => handleTaskSubmission()}
-        type="submit"
-        aria-label="create task button"
-      >
-        CREATE
-      </button>
+      <ActionButton action={() => handleTaskSubmission()} btnText="CREATE" type="action-btn" />
     </div>
   )
 }

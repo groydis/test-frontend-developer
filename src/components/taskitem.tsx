@@ -1,5 +1,7 @@
 import { Task } from '../@types/task'
 import UseTasks from '../state/hooks/usetask'
+import ActionButton from './inputs/actionbutton'
+import Emoji from './emoji'
 
 type Props = {
   task: Task
@@ -12,14 +14,11 @@ function TaskItem({ task }: Props) {
   return (
     <div className="task-item-wrapper">
       <div>
-        <button
-          id="complete-btn"
-          aria-label="task toggle complete button"
-          onClick={() => toggleCompleteTaskStatus(id)}
-          type="submit"
-        >
-          { !isComplete ? <p> </p> : <p>&#10004;</p> }
-        </button>
+        <ActionButton
+          action={() => toggleCompleteTaskStatus(id)}
+          btnText={!isComplete ? <p> </p> : <p><Emoji symbol="&#10004;" /></p>}
+          type="complete-btn"
+        />
         { !isComplete ? description : (
           <del>
             {' '}
@@ -28,14 +27,7 @@ function TaskItem({ task }: Props) {
           </del>
         ) }
       </div>
-      <button
-        id="delete-btn"
-        aria-label="task delete button"
-        onClick={() => deleteTask(id)}
-        type="submit"
-      >
-        &#128465;
-      </button>
+      <ActionButton action={() => deleteTask(id)} btnText={<Emoji symbol="&#128465;" />} type="delete-btn" />
     </div>
   )
 }

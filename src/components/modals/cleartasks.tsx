@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import UseTasks from '../../state/hooks/usetask'
+import ActionButton from '../inputs/actionbutton'
+import Emoji from '../emoji'
 
 function ClearTasksModal() {
   const { allTasksCompleted, clearTasks } = UseTasks()
@@ -14,24 +16,16 @@ function ClearTasksModal() {
       className="modal-wrapper"
       open={open}
     >
-      <p> &#129321;All Tasks Completed! &#129321; </p>
+      <p>
+        <Emoji symbol="&#129321;" />
+        {' '}
+        Well Done! Clear all tasks?
+        {' '}
+        <Emoji symbol="&#129321;" />
+      </p>
       <div>
-        <button
-          id="action-btn"
-          aria-label="clear tasks button"
-          onClick={() => clearTasks()}
-          type="submit"
-        >
-          CLEAR
-        </button>
-        <button
-          id="action-btn"
-          aria-label="cancel modal button"
-          onClick={() => setOpen(false)}
-          type="button"
-        >
-          CLOSE
-        </button>
+        <ActionButton action={() => clearTasks()} btnText="CLEAR" type="action-btn" />
+        <ActionButton action={() => setOpen(false)} btnText="CLOSE" type="action-btn" />
       </div>
     </dialog>
   )
