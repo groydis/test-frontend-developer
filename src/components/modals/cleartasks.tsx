@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import UseTasks from '../../state/hooks/usetask'
-import ActionButton from '../inputs/actionbutton'
+import CustomButton from '../inputs/custombutton'
 import Emoji from '../emoji'
 
 function ClearTasksModal() {
@@ -17,15 +17,15 @@ function ClearTasksModal() {
       open={open}
     >
       <p>
-        <Emoji symbol="&#129321;" />
+        <Emoji symbol="wow" />
         {' '}
         Well Done! Clear all tasks?
         {' '}
-        <Emoji symbol="&#129321;" />
+        <Emoji symbol="wow" />
       </p>
       <div>
-        <ActionButton action={() => clearTasks()} btnText="CLEAR" type="action-btn" />
-        <ActionButton action={() => setOpen(false)} btnText="CLOSE" type="action-btn" />
+        <CustomButton action={() => clearTasks()} btnText="CLEAR" type="action-btn" />
+        <CustomButton action={() => setOpen(false)} btnText="CLOSE" type="action-btn" />
       </div>
     </dialog>
   )

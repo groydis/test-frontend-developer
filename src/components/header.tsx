@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <h1 className="title-text-wrapper">
-        <Emoji symbol="&#128221;" />
+        <Emoji symbol="list" />
         {' '}
         Todo List
       </h1>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import UseTasks from '../../state/hooks/usetask'
 import Emoji from '../emoji'
-import ActionButton from '../inputs/actionbutton'
+import CustomButton from '../inputs/custombutton'
 
 function ErrorModal() {
   const { error } = UseTasks()
@@ -16,12 +16,12 @@ function ErrorModal() {
       className="modal-wrapper"
       open={open}
     >
-      <Emoji symbol="&#129327;" />
+      <Emoji symbol="boom" />
       {' '}
       An Error Has Occured!
       {' '}
-      <Emoji symbol="&#129327;" />
-      <ActionButton action={() => setOpen(false)} btnText="OK" type="action-btn" />
+      <Emoji symbol="boom" />
+      <CustomButton action={() => setOpen(false)} btnText="OK" type="action-btn" />
     </dialog>
   )
 }

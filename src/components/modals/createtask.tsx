@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import UseTasks from '../../state/hooks/usetask'
-import ActionButton from '../inputs/actionbutton'
-import TaskInput from '../taskinput'
+import CustomButton from '../inputs/custombutton'
+import TaskInput from '../inputs/taskinput'
 
 function CreateTasksModal() {
   const { allTasksCompleted } = UseTasks()
@@ -9,18 +9,18 @@ function CreateTasksModal() {
 
   useEffect(() => {
     setShowDialog(false && !allTasksCompleted)
-  }, [true && allTasksCompleted])
+  }, [allTasksCompleted])
 
   return (
     <div className="create-task-wrapper">
-      { !showDialog ? <ActionButton action={() => setShowDialog(true)} btnText="CREATE" type="action-btn" /> : <br />}
+      { !showDialog ? <CustomButton action={() => setShowDialog(true)} btnText="CREATE" type="action-btn" /> : <br />}
       <dialog
         className="modal-wrapper"
         open={showDialog}
       >
         <TaskInput />
         <div>
-          <ActionButton action={() => setShowDialog(false)} btnText="CLOSE" type="action-btn" />
+          <CustomButton action={() => setShowDialog(false)} btnText="CLOSE" type="action-btn" />
         </div>
       </dialog>
     </div>

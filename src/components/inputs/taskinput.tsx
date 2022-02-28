@@ -1,6 +1,6 @@
 import { ChangeEvent, useRef } from 'react'
-import UseTasks from '../state/hooks/usetask'
-import ActionButton from './inputs/actionbutton'
+import UseTasks from '../../state/hooks/usetask'
+import CustomButton from './custombutton'
 
 function TaskInput() {
   const { createTask } = UseTasks()
@@ -24,7 +24,7 @@ function TaskInput() {
         ref={inputReference}
         type="text"
       />
-      <ActionButton action={() => handleTaskSubmission()} btnText="CREATE" type="action-btn" />
+      <CustomButton action={() => handleTaskSubmission()} btnText="CREATE" type="action-btn" />
     </div>
   )
 }

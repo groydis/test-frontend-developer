@@ -4,17 +4,17 @@ type Props = {
   type: string,
 }
 
-function ActionButton({ action, btnText, type }: Props) {
+function CustomButton({ action, btnText, type }: Props) {
   return (
     <button
       id={type}
       onClick={action}
       type="submit"
-      aria-label="action button"
+      aria-label={`${btnText} action button`}
     >
       {btnText}
     </button>
   )
 }
 
-export default ActionButton
+export default CustomButton
