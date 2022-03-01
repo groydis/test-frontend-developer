@@ -1,10 +1,12 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
+import * as cors from 'cors'
 import { routes } from './routes'
 
 const app: express.Application = express()
 const port: number = Number(process.env.PORT) || 8008
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use('/', routes(express.Router()))
 
